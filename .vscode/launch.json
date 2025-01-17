@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Project 1",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project1.program",
+            "console": "integratedTerminal"
+
+        }, 
+        {
+            "name": "Project 2",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project2.program",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Project 3",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project3.program",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Project 4",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project4.program",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Project 5",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project5.program",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Project 6",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "projects.project6.program",
+            "console": "integratedTerminal"
+        },
+        
+    ]
+}
