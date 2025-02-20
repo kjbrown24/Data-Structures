@@ -1,5 +1,6 @@
 # datastructures.array.Array
-#complete
+#complete 1
+
 """ This module defines an Array class that represents a one-dimensional array. 
     See the stipulations in iarray.py for more information on the methods and their expected behavior.
     Methods that are not implemented raise a NotImplementedError until they are implemented.
