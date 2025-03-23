@@ -6,8 +6,7 @@ from datastructures.array import Array
 from projects.project2.Cell import Cell
 import random
 from typing import List
-rows = 2
-cols = 2
+
 
 class Grid:
     def init(self, width: int, height: int) -> None:

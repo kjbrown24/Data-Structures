@@ -7,6 +7,7 @@ class Gamecontroller:
     def __init__(self, grid:Grid) -> None:
         print("from the contructor")
         self.grid = grid
+        self.history = []
 
     def run(self) -> None:
         kb = KBHit()
@@ -45,8 +46,8 @@ class Gamecontroller:
                 if c == 'c':
                     step_mode = False
             
-            else:
-                continue
+            # else:
+            #     continue
             print("The cells are no more!")
 
         kb.set_normal_term()

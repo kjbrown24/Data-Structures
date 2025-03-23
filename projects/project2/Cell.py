@@ -7,10 +7,10 @@ class Cell:
     def num_neighbors(self):
         pass
 
-    def eq(self, other: object) -> bool:
+    def __eq__(self, other: object) -> bool:
         return self.alive == other.alive
 
-    def str__(self):
+    def __str__(self):
         if self.is_alive == False:
             return "💀"
         else:

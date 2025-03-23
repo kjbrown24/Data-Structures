@@ -93,7 +93,7 @@ class Array2D(IArray2D[T]):
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Array2D) or len(self.array2D) != len(other.array2D):
             return False
-        return all(self.array2D[i] == other.array2D[i] for i in range(len(self.array2D)))
+        return self.array2D == other.array2D
 
     def __len__(self): 
         return self.row_len

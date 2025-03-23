@@ -39,11 +39,29 @@ class Array(IArray[T]):
         """
         Retrieves an element or a slice of elements from the array.
         """
-        if not isinstance(index, (int, slice)):
-            raise TypeError("Index must be an int or a slice.")
-        if isinstance(index, int) and (index < 0 or index >= self.__logical):
-            raise IndexError("Index out of bounds.")
-        return self.__elements[:self.__logical][index]
+    def getitem(self, index: int | slice) -> T | Sequence[T]:
+        if  not isinstance(index, slice) and not isinstance(index, int):
+                raise TypeError("Needs to be int or slice")
+        if isinstance(index, slice):
+
+                start, stop = index.start, index.stop
+
+        if start is None:
+                    start = 0
+        if stop is None:
+                    stop = self.logical - 1
+
+        if start >= self.logical or stop > self.logical:
+                    raise IndexError('Not in Bounds')
+
+        items = []
+        for item in range(len(self.elements)):
+                items.append(item if not isinstance(item, np.generic) else item.item())
+
+                items_to_return = self.elements[index].tolist()
+                return Array(starting_sequence= items_to_return, data_type = self.data_type)
+
+        return self.elements[index] if not isinstance(self.elements[index], np.generic) else self.__elements[index].item()
     
     def __setitem__(self, index: int, item: T) -> None:
         """
