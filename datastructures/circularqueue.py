@@ -1,7 +1,3 @@
-#date extended
-#again
-
-
 from typing import Any
 
 from datastructures.array import Array
@@ -152,10 +148,13 @@ class CircularQueue(IQueue[T]):
             return False
         
         # Equality is: same front/rear and the elements between them are eq, even if they are in different positions
+
         for item in range(len(self)):
             if self.circularqueue[(self._front + item) % len(self)] != other.circularqueue[(other._front + item) % len(other)]:
                 return False
         return True
+            
+                # all(self.circularqueue[(self._front + i) % len(self.circularqueue)] == other.circularqueue[(other._front + i) % len(other.circularqueue)] for i in range(len(self)))
 
     def __len__(self) -> int:
         ''' Returns the number of items in the queue
@@ -180,4 +179,3 @@ class CircularQueue(IQueue[T]):
                 A string representation of the CircularQueue object
         '''
         return f'ArrayQueue({repr(self.circularqueue)})'
-                                  
