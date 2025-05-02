@@ -1,26 +1,43 @@
 from projects.project3.Menu import Menu
 from projects.project3.Customer_Order import Customer_Order
+from projects.project3.Order_Queue import Order_Queue
+# from projects.project
+
 def main():
-    menu = Menu
-    print(Menu)
-    customer_order = Customer_Order
-    more == 'Y'
-    while more == 'Y':
-        start = input('what drinks would you like today?')
-        if start ==1:
-                customer_order.add_drink(menu.get_drink(0))
-        elif start == 2:
-            customer_order.add_drink(menu.get_drink(1))
-        elif start == 3:
-            customer_order.add_drink(menu.get_drink(2))
-        elif start == 4:
-            customer_order.add_drink(menu.get_drink(3))
-        elif start == 5:
-            customer_order.add_drink(menu.get_drink(4))
-        more = input('Would you like to order another? (Y)es or (N)o')
-        pass#repeat loop above 
-        customer_order.repeat_order
+    order_queue = Order_Queue()
+    while True:
+        print("\nDrink Ordering System")
+        print("1. Display Menu")
+        print("2. Take New Order")
+        print("3. View Open Orders")
+        print("4. Mark Next Order as Complete")
+        print("5. End-of-Day Report")
+        print("6. Exit")
 
+        choice = input("Choose an option (1-6): ")
 
+        if choice == '1':
+            Menu().print_menu()
+        elif choice == '2':
+            name = input("Customer name: ")
+            customer_order = Customer_Order(name)
+            order = customer_order.take_order()
+            order.repeat_order()
+            confirm = input("Confirm this order? (Y/N): ").strip().upper()
+            if confirm == 'Y':
+                order_queue.add_order(order)
+        elif choice == '3':
+            order_queue.view_open_orders()
+        elif choice == '4':
+            order_queue.complete_order()
+        elif choice == '5':
+            order_queue.end_of_day_report()
+        elif choice == '6':
+            print("Exiting system. Goodbye!")
+            break
+        else:
+            print("Invalid option.")
+
+    
 if __name__ == '__main__':
     main()
