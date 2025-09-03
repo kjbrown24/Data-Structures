@@ -1,4 +1,4 @@
-#Drink Ordering System
+# Drink Ordering System
 
 This project is a simple command line program where customers can order drinks, review their order, and confirm it. The system also trakcs open and completed orders and shows a report at the end of the day.
 
