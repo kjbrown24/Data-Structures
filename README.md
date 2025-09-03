@@ -4,4 +4,4 @@
 
 - Project: [Game Of Life](https://github.com/kjbrown24/Data-Structures/blob/main/projects/project2/README.md)
 
-- Project: Drink Ordering System
+- Project: [Drink Ordering System](https://github.com/kjbrown24/Data-Structures/blob/main/projects/project3/README.md)
